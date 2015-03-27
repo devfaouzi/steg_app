@@ -27,12 +27,13 @@ defined('_JEXEC') or die('Restricted access');
         <?php if ($this->direction == 'rtl') : ?>
             <link href="<?php echo $this->baseurl ?>/templates/rhuk_milkyway/css/template_rtl.css" rel="stylesheet" type="text/css" />
         <?php endif; ?>
-        <?php 
-        $mainframe->addCustomHeadTag('<script src="includes/js/joomla.javascript.js" type="text/javascript"></script>'); 
-        ?>
+        <?php
+        $mainframe->addCustomHeadTag('<script src="includes/js/joomla.javascript.js" type="text/javascript"></script>');
+        $mainframe->addCustomHeadTag('<script src="components/com_steg/js/general.js" type="text/javascript"></script>');
+        ?> 
     </head>
 
-    
+
 
     <body id="page_bg" class="color_<?php echo $this->params->get('colorVariation'); ?> bg_<?php echo $this->params->get('backgroundVariation'); ?> width_<?php echo $this->params->get('widthStyle'); ?>">
         <a name="up" id="up"></a>

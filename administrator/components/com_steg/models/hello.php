@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Hello Model for Hello World Component
+ * Steg Model for Steg World Component
  * 
  * @package    Joomla.Tutorials
  * @subpackage Components
@@ -14,22 +14,22 @@ defined('_JEXEC') or die('Restricted access');
 jimport('joomla.application.component.model');
 
 /**
- * Hello Model
+ * Steg Model
  *
  * @package    Joomla.Tutorials
  * @subpackage Components
  */
-class HelloModelHello extends JModel {
+class StegModelHello extends JModel {
 
     /**
      * Gets the greeting
      * @return string The greeting to be displayed to the user
      */
     function getGreeting() {
-//        return 'Hello, World!';
+//        return 'Steg, World!';
         $db = & JFactory::getDBO();
 
-        $query = 'SELECT greeting FROM #__hello';
+        $query = 'SELECT greeting FROM #__steg_hello';
         $db->setQuery($query);
         $greeting = $db->loadResult();
 
@@ -48,7 +48,7 @@ class HelloModelHello extends JModel {
     }
 
     function _buildQuery() {
-        $query = ' SELECT * FROM #__gestauto_personnel ' . '  WHERE id = ' . $this->_id;
+        $query = ' SELECT * FROM #__steg_hello ' . '  WHERE id = ' . $this->_id;
         return $query;
     }
 
@@ -64,30 +64,6 @@ class HelloModelHello extends JModel {
             $data->id = 0;
             $this->_data = $data;
         }
-        return $this->_data;
-    }
-
-    function getPersonnelIdByMail($mail) {
-
-        $query = "SELECT * FROM #__gestauto_personnel  WHERE contactEmail = '" . $mail . "' ";
-        $this->_db->setQuery($query);
-        $this->_data = $this->_db->loadObject();
-        return $this->_data;
-    }
-
-    function getPersonnelIdByUserId($userid) {
-
-        $query = "SELECT * FROM #__gestauto_personnel  WHERE personnelUserId = " . $userid;
-        $this->_db->setQuery($query);
-        $this->_data = $this->_db->loadObject();
-        return $this->_data;
-    }
-
-    function getPersonnelVoiture($userid) {
-
-        $query = "SELECT * FROM #__gestauto_personnel  WHERE personnelUserId = " . $userid;
-        $this->_db->setQuery($query);
-        $this->_data = $this->_db->loadObject();
         return $this->_data;
     }
 
